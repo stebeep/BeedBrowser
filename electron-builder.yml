@@ -1,0 +1,63 @@
+appId: app.beedbrowser.desktop
+productName: BeedBrowser
+copyright: Copyright (c) 2026 BeedBrowser
+
+directories:
+  buildResources: build
+  output: release
+
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+  - '!**/*.ts'
+
+asar: true
+compression: maximum
+npmRebuild: false
+nodeGypRebuild: false
+
+win:
+  icon: build/icon.ico
+  target:
+    - target: portable
+      arch:
+        - x64
+    - target: nsis
+      arch:
+        - x64
+  artifactName: BeedBrowser.exe
+  legalTrademarks: BeedBrowser
+
+portable:
+  artifactName: BeedBrowser.exe
+  unpackDirName: BeedBrowser
+  requestExecutionLevel: user
+
+nsis:
+  artifactName: BeedBrowser-Setup.exe
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: BeedBrowser
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  installerHeaderIcon: build/icon.ico
+  uninstallDisplayName: BeedBrowser
+  license: build/license.txt
+  multiLanguageInstaller: true
+  displayLanguageSelector: true
+  installerLanguages:
+    - ru_RU
+    - en_US
+    - de_DE
+    - fr_FR
+    - es_ES
+  language: '1049'
+
+publish: null

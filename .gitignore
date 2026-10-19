@@ -1,0 +1,15 @@
+node_modules/
+out/
+release/
+dist/
+*.log
+.DS_Store
+.vite/
+*.tsbuildinfo
+
+# Development artefacts: screenshots and the scratch profiles the automated
+# runs use. Neither belongs in the repository.
+.shots/
+.verify-*/
+.smoke-*/
+.shots-profile/
